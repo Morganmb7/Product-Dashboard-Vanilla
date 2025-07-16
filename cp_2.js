@@ -42,3 +42,11 @@ function displayProducts(products) {
     container.appendChild(productCard);
   });
 }
+//Handling errors
+function handleError(error) {
+    console.error("An error occurred:", error.message);
+}
+
+//calling the functions
+fetchProductsThen();
+fetchProductsAsync();
