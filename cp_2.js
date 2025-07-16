@@ -24,3 +24,21 @@ async function fetchProductsAsync() {
 }
 }
 
+//display products 
+function displayProducts(products) {
+    const contianer = document.getElemetById("products-container");
+    contianer.innerHTML = ""; // Clear previous content
+    products.slice(0,5).forEach((product) =>{
+        const {name, price, image} = product.fields;
+
+           const productCard = document.createElement("div");
+    productCard.className = "product-card";
+    productCard.innerHTML = `
+      <img src="${image[0].url}" alt="${name}" />
+      <h3>${name}</h3>
+      <p>$${(price / 100).toFixed(2)}</p>
+    `;
+
+    container.appendChild(productCard);
+  });
+}
